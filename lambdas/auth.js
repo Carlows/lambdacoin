@@ -12,7 +12,7 @@ const Credentials = function(email, pass) {
   this.pass = pass;
 }
 
-exports.handler = (event, context, callback, config) => {
+exports.authenticate = (event, context, callback, config) => {
   const token = event.authorizationToken;
   const user = userFromBasicAuthString(token);
   console.log(user);
