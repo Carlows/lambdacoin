@@ -28,7 +28,7 @@ exports.authenticate = (event, context, callback, config) => {
     }
   };
 
-  docClient.getItem(params, (err, data) => {
+  dynamoDB.getItem(params, (err, data) => {
     console.log(err);
     if (err) { context.fail("Unauthorized"); }
     // The user
